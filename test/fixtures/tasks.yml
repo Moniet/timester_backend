@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  start_time: 2019-08-07 15:13:00
+  end_time: 2019-08-07 15:13:00
+  recurring: false
+  user: 
+
+two:
+  title: MyString
+  start_time: 2019-08-07 15:13:00
+  end_time: 2019-08-07 15:13:00
+  recurring: false
+  user: 
