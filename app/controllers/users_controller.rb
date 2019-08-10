@@ -11,7 +11,7 @@ class UsersController < ApplicationController
       end    
     end
 
-    def tasks
+    def tasks 
         userData = UserSerializer.new(current_user).serializable_hash
         userTasks = TaskSerializer.new(current_user.tasks).serializable_hash
         userGoals = GoalSerializer.new(current_user.goals).serializable_hash
