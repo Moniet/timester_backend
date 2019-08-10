@@ -6,7 +6,7 @@ class AuthController < ApplicationController
 
         if @user && @user.authenticate(user_login_params[:password])
             hash = UserSerializer.new(@user).serializable_hash
-            render json: { hash }, status: :created
+            render json: { userData: hash, jwt: encode_token(user_id: @user.id) }
         else
             render json: { message: 'Invalid username or password' }, status: :unauthorized
         end

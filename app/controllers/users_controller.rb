@@ -8,8 +8,14 @@ class UsersController < ApplicationController
         render json: {jwt: token}, status: :created
       else
         render json: { error: 'failed to create user' }, status: :not_acceptable
-      end
-      byebug
+      end    
+    end
+
+    def tasks
+        userData = UserSerializer.new(current_user).serializable_hash
+        userTasks = TaskSerializer.new(current_user.tasks).serializable_hash
+        userGoals = GoalSerializer.new(current_user.goals).serializable_hash
+        render json: { user: userData, tasks: userTasks, goals: userGoals }
     end
    
     private
