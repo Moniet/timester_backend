@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :user, only: [:create]
+  resources :tasks, only: [:create, :update]
   post '/register', to: 'users#create'
   get '/tasks', to: 'users#tasks'
   post '/login', to: 'auth#create'

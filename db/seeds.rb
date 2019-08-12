@@ -1,5 +1,5 @@
 require 'faker'
-require 'time'
+require 'time
 
 # user = User.first
 
