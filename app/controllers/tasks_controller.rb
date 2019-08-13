@@ -10,7 +10,7 @@ class TasksController < ApplicationController
 
         tasks = TaskSerializer.new(task).serializable_hash
         userGoals = GoalSerializer.new(task.goals).serializable_hash
-        render json: { tasks: userTasks, goals: userGoals }
+        render json: { tasks: tasks, goals: userGoals }
     end
 
     private 
