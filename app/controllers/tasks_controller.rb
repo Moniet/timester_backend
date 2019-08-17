@@ -6,7 +6,7 @@ class TasksController < ApplicationController
             task.goals.build(goal)
         end
 
-        task.save
+        task.save 
 
         tasks = TaskSerializer.new(task).serializable_hash
         userGoals = GoalSerializer.new(task.goals).serializable_hash
