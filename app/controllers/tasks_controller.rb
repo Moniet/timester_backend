@@ -8,8 +8,8 @@ class TasksController < ApplicationController
 
         task.save
 
-        tasks = TaskSerializer.new(task).serializable_hash
-        userGoals = GoalSerializer.new(task.goals).serializable_hash
+        tasks = TaskSerializer.new(current_user.tasks).serializable_hash
+        userGoals = GoalSerializer.new(current_user.goals).serializable_hash
         render json: { tasks: tasks, goals: userGoals }
     end
 
@@ -22,9 +22,9 @@ class TasksController < ApplicationController
             prev_goal.update_attributes(title: goal[:title], start_time: goal[:start_time], end_time: goal[:end_time])
         end
 
-        updated_task = TaskSerializer.new(task).serializable_hash
-        goals = GoalSerializer.new(task.goals).serializable_hash
-        render json: { task: updated_task, goals }
+        tasks = TaskSerializer.new(current_user.tasks).serializable_hash
+        goals = GoalSerializer.new(current_user .goals).serializable_hash
+        render json: { tasks: tasks, goals: goals }
     end
 
     private 
