@@ -24,7 +24,12 @@ class TasksController < ApplicationController
 
         tasks = TaskSerializer.new(current_user.tasks).serializable_hash
         goals = GoalSerializer.new(current_user .goals).serializable_hash
-        render json: { tasks: tasks, goals: goals }
+
+        if task
+            render json: { tasks: tasks, goals: goals }
+        else
+            render json: { error: 'couldnt update value'}
+        end
     end
 
     private 
