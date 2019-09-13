@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   post '/register', to: 'users#create'
   get '/tasks', to: 'users#tasks'
   post '/login', to: 'auth#create'
+  post '/goals', to: 'goals#create'
 end
